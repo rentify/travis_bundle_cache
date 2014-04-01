@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'travis_bundle_cache/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "travis_bundle_cache"
+  spec.name          = "travis_bundle_cache-rentify"
   spec.version       = TravisBundleCache::VERSION
   spec.authors       = ["David Genord II"]
   spec.email         = ["david@collectiveidea.com"]
   spec.description   = %q{Cache the gem bundle for speedy travis builds}
   spec.summary       = %q{Cache the gem bundle for speedy travis builds}
-  spec.homepage      = "https://github.com/collectiveidea/travis_bundle_cache"
+  spec.homepage      = "https://github.com/rentify/travis_bundle_cache"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -18,9 +18,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
   spec.executables   = ["travis_bundle_cache", "travis_bundle_install"]
-
-  spec.signing_key   = File.expand_path("~/.gemcert/gem-private_key.pem")
-  spec.cert_chain    = ['gem-public_cert.pem']
 
   spec.add_dependency "bundler", "~> 1.3"
   spec.add_dependency "aws-sdk"
